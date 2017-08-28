@@ -9,6 +9,10 @@ module Mozaic
       'sqlite' => 'sqlite3',
     }.freeze
 
+    DATABASE_ADAPTER.keys.each do |adapter_key|
+      define_method("#{adapter_key}?") { adapter_key == rdbms }
+    end
+
     def initialize(yaml, options)
       @data = YAML.load_file(yaml).with_indifferent_access
       @options = options
