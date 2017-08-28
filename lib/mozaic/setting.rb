@@ -36,23 +36,23 @@ module Mozaic
     end
 
     def db_name
-      @options[:db] || @data[:db][:name]
+      @options[:d] || @data[:db][:name]
     end
     
     def rdbms
-      @data[:db][:rdbms]
+      @data[:d][:rdbms]
     end
 
     def user
-      @options[:user] || @data[:user]
+      @options[:u] || @data[:user]
     end
 
     def password
-      @options[:password] || @data[:password]
+      @options[:p] || @data[:password]
     end
 
     def host
-      @options[:host] || @data[:host]
+      @options[:h] || @data[:host]
     end
 
     def port
