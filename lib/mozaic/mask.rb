@@ -1,6 +1,7 @@
 require 'active_support'
 require 'active_support/core_ext'
 require 'mozaic/mask_method/tel'
+require 'mozaic/mask_method/email'
 
 module Mozaic
   class Mask
