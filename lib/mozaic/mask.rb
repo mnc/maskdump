@@ -2,6 +2,7 @@ require 'active_support'
 require 'active_support/core_ext'
 require 'mozaic/mask_method/tel'
 require 'mozaic/mask_method/email'
+require 'mozaic/mask_method/blackout'
 
 module Mozaic
   class Mask
