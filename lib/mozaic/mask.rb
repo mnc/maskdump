@@ -1,5 +1,6 @@
 require 'active_support'
 require 'active_support/core_ext'
+require 'mozaic/mask_method/tel'
 
 module Mozaic
   class Mask
