@@ -1,8 +1,10 @@
 # Mozaic
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/mozaic`. To experiment with that code, run `bin/console` for an interactive prompt.
+*this is develop version*
 
-TODO: Delete this and the text above, and describe your gem
+Mozaic provides tools to help you dump data from RDBMS and mask their specified columns.  
+You can use default masking method for masking data.  
+For example, tel, email, blackout and so on. Otherwise, you program for custom masking method.
 
 ## Installation
 
@@ -14,15 +16,46 @@ gem 'mozaic'
 
 And then execute:
 
-    $ bundle
+```
+$ bundle
+```
 
 Or install it yourself as:
 
-    $ gem install mozaic
+```
+$ gem install mozaic
+```
 
 ## Usage
 
-TODO: remove sub command 
+
+1. define mask target column and database settings
+
+```
+# tables.yml
+---
+user: root
+host: localhost
+port: 3306
+db: 
+  name: sample_development
+  rdbms: mysql
+tables: 
+  - name: owners
+    columns: 
+      - name: phone_number
+        method: tel # Data Masking Method
+  - name: users
+    columns: 
+      - name: mail
+        method: email # Data Masking Method
+```
+
+2. execute mozaic command
+
+```
+$ mozaic tables.yml --dist sample -p xxxxx
+```
 
 ## Development
 
