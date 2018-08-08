@@ -31,7 +31,7 @@ $ gem install mozaic
 
 1. define mask target column and database settings
 
-```
+```yml
 # tables.yml
 ---
 user: root
