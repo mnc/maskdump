@@ -6,16 +6,15 @@ module Mozaic
     DATABASE_ADAPTER = {
       'mysql' => 'mysql2',
       'postgresql' => 'postgresql',
-      'sqlite' => 'sqlite3',
     }.freeze
-
-    DATABASE_ADAPTER.keys.each do |adapter_key|
-      define_method("#{adapter_key}?") { adapter_key == rdbms }
-    end
 
     def initialize(yaml, options)
       @data = YAML.load_file(yaml).with_indifferent_access
       @options = options
+    end
+
+    DATABASE_ADAPTER.keys.each do |adapter_key|
+      define_method("#{adapter_key}?") { adapter_key == rdbms }
     end
 
     def db_setting_hash
@@ -29,7 +28,7 @@ module Mozaic
       }.with_indifferent_access
     end
 
-    def table_settings
+    def tables
       @options[:tables] || @data[:tables]
     end
 
