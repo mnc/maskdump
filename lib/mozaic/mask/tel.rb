@@ -1,5 +1,5 @@
 module Mozaic
-  module MaskMethod
+  module Mask
     class Tel
       def initialize(records, column_name)
         @records = records

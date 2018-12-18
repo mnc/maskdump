@@ -1,12 +1,12 @@
 require 'active_support'
 require 'active_support/core_ext'
-require 'mozaic/mask_method/tel'
-require 'mozaic/mask_method/email'
-require 'mozaic/mask_method/blackout'
+require 'mozaic/mask/tel'
+require 'mozaic/mask/email'
+require 'mozaic/mask/blackout'
 
 module Mozaic
   class Mask
-    DIR_PREFIX = "mozaic/mask_method".freeze
+    DIR_PREFIX = "mozaic/mask".freeze
 
     def initialize(records, column_settings)
       @column_settings = column_settings

@@ -1,5 +1,5 @@
 module Mozaic
-  module MaskMethod
+  module Mask
     class Blackout
       BLACKOUT_CHAR = "#"
 
