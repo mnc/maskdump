@@ -9,7 +9,7 @@ module Mozaic
     }.freeze
 
     def initialize(yaml, options)
-      @data = YAML.load_file(yaml).with_indifferent_access
+      @yaml = YAML.load_file(yaml).with_indifferent_access
       @options = options
     end
 
@@ -29,7 +29,7 @@ module Mozaic
     end
 
     def tables
-      @options[:tables] || @data[:tables]
+      @options[:tables] || @yaml[:tables]
     end
 
     private
@@ -39,27 +39,27 @@ module Mozaic
     end
 
     def db_name
-      @options[:d] || @data[:db][:name]
+      @options[:d] || @yaml[:db][:name]
     end
     
     def rdbms
-      @data[:d][:rdbms]
+      @yaml[:d][:rdbms]
     end
 
     def user
-      @options[:u] || @data[:user]
+      @options[:u] || @yaml[:user]
     end
 
     def password
-      @options[:p] || @data[:password]
+      @options[:p] || @yaml[:password]
     end
 
     def host
-      @options[:h] || @data[:host]
+      @options[:h] || @yaml[:host]
     end
 
     def port
-      @options[:port] || @data[:port]
+      @options[:port] || @yaml[:port]
     end
   end
 end
