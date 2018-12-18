@@ -43,7 +43,7 @@ module Mozaic
     end
     
     def rdbms
-      @yaml[:d][:rdbms]
+      @yaml[:db][:rdbms]
     end
 
     def user
