@@ -1,8 +1,8 @@
-# Mozaic
+# maskdump
 
 *this is develop version*
 
-Mozaic provides tools to help you dump data from RDBMS and mask their specified columns.  
+maskdump provides tools to help you dump data from RDBMS and mask their specified columns.  
 You can use default masking method for masking data.  
 For example, tel, email, blackout and so on. Otherwise, you program for custom masking method.
 
@@ -11,7 +11,7 @@ For example, tel, email, blackout and so on. Otherwise, you program for custom m
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'mozaic'
+gem 'maskdump'
 ```
 
 And then execute:
@@ -23,7 +23,7 @@ $ bundle
 Or install it yourself as:
 
 ```
-$ gem install mozaic
+$ gem install maskdump
 ```
 
 ## Usage
@@ -51,10 +51,10 @@ tables:
         method: email # Data Masking Method
 ```
 
-2. execute mozaic command
+2. execute maskdump command
 
 ```
-$ mozaic tables.yml --dist sample -p xxxxx
+$ maskdump tables.yml --dist sample -p xxxxx
 ```
 
 ## Development
@@ -65,7 +65,7 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/mozaic. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
+Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/maskdump. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
 
 
 ## License

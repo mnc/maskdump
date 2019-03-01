@@ -1,4 +1,4 @@
-module Mozaic
+module Maskdump
   module Mask
     class Tel
       def initialize(records, column_name)

@@ -1,0 +1,6 @@
+#!/usr/bin/env ruby
+
+require "maskdump"
+
+Maskdump::Command.start(ARGV)
+

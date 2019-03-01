@@ -1,4 +1,4 @@
-module Mozaic
+module Maskdump
   module Mask
     class Blackout
       BLACKOUT_CHAR = "#"

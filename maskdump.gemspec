@@ -1,17 +1,17 @@
 # coding: utf-8
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'mozaic/version'
+require 'maskdump/version'
 
 Gem::Specification.new do |spec|
-  spec.name          = "mozaic"
-  spec.version       = Mozaic::VERSION
+  spec.name          = "maskdump"
+  spec.version       = Maskdump::VERSION
   spec.authors       = ["mnc"]
   spec.email         = ["manchose9@gmail.com"]
 
-  spec.summary       = %q{Mozaic is a ruby gem to dump database and mask its personal data.}
-  spec.description   = %q{Mozaic is a ruby gem to dump database and mask its personal data. You can specify target columns to mask and masking method in YAML file. }
-  spec.homepage      = "https://github.com/mnc/mozaic"
+  spec.summary       = %q{maskdump is a ruby gem to dump database and mask its personal data.}
+  spec.description   = %q{maskdump is a ruby gem to dump database and mask its personal data. You can specify target columns to mask and masking method in YAML file. }
+  spec.homepage      = "https://github.com/mnc/maskdump"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files -z`.split("\x0").reject do |f|

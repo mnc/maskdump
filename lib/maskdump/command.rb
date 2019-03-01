@@ -2,7 +2,7 @@ require 'thor'
 require 'yaml'
 require 'active_record'
 
-module Mozaic
+module Maskdump
   class Command < Thor
 
     class_option :database, type: :string, aliases: "-d", banner: 'database'

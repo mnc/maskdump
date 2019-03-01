@@ -1,4 +1,4 @@
-module Mozaic
+module Maskdump
   module BulkInsert
     class Mysql
       def initialize(table_name, records, columns)

@@ -1,12 +1,12 @@
 require 'active_support'
 require 'active_support/core_ext'
-require 'mozaic/mask/tel'
-require 'mozaic/mask/email'
-require 'mozaic/mask/blackout'
+require 'maskdump/mask/tel'
+require 'maskdump/mask/email'
+require 'maskdump/mask/blackout'
 
-module Mozaic
+module Maskdump
   class Mask
-    DIR_PREFIX = "mozaic/mask".freeze
+    DIR_PREFIX = "maskdump/mask".freeze
 
     def initialize(records, column_settings)
       @column_settings = column_settings

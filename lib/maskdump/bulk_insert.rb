@@ -1,8 +1,8 @@
-require 'mozaic/bulk_insert/mysql'
-require 'mozaic/bulk_insert/postgresql'
-require 'mozaic/bulk_insert/sqlite'
+require 'maskdump/bulk_insert/mysql'
+require 'maskdump/bulk_insert/postgresql'
+require 'maskdump/bulk_insert/sqlite'
 
-module Mozaic
+module Maskdump
   module BulkInsert
     class << self
       def generate(table_name, records, columns, setting)

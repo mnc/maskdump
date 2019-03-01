@@ -1,7 +1,7 @@
 require 'active_support'
 require 'active_support/core_ext'
 
-module Mozaic
+module Maskdump
   class Setting
     DATABASE_ADAPTER = {
       'mysql' => 'mysql2',

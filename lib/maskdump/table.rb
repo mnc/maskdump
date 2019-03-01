@@ -1,6 +1,6 @@
 require 'active_record'
 
-module Mozaic
+module Maskdump
   class Table
     attr_reader :name
 
