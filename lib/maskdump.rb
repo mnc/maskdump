@@ -6,4 +6,5 @@ module Maskdump
   autoload :Table, 'maskdump/table'
   autoload :Mask, 'maskdump/mask'
   autoload :BulkInsert, 'maskdump/bulk_insert'
+  autoload :Dump, 'maskdump/dump'
 end
