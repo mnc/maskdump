@@ -12,7 +12,6 @@ module Maskdump
       def parser
         @parser ||= ParsletParser.new
       end
-
     end
   end
 
@@ -25,7 +24,7 @@ module Maskdump
     end
 
     rule(:statement) do
-      copy | comment | newline | something | spaces
+      copy | newline | something | spaces
     end
 
     rule(:delimiter) do
@@ -34,16 +33,6 @@ module Maskdump
 
     rule(:newline) do
       str("\n") >> str("\r").maybe
-    end
-
-    rule(:comment) do
-      (
-        (str("#") | str("--")) >> non(newline) >> newline
-      ) 
-      #| (
-      #  str("/") >> space? >> str("*") >>
-      #    ((str("*") >> space? >> str("/")).absent? >> any).repeat >> (str("*") >> space? >> str("/"))
-      #)
     end
 
     #
