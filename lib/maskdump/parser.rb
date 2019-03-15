@@ -78,8 +78,8 @@ module Maskdump
 
     rule(:copy) do
       (
-        str('COPY') >> spaces >> table_name.as(:table) >> spaces >> column_definitions >> 
-        spaces >> str('FROM stdin') >> delimiter >> newline >> column_values >> newline >> str('\.')
+        ignore_case_str('copy') >> spaces >> table_name.as(:table) >> spaces >> column_definitions >> 
+        spaces >> ignore_case_str('from stdin') >> delimiter >> newline >> column_values >> newline >> str('\.')
       ).as(:copy)
     end
 
@@ -97,6 +97,10 @@ module Maskdump
 
     def space_separated(value)
       value >> (spaces >> value).repeat
+    end
+
+    def ignore_case_str(value)
+      str(value.downcase) | str(value.upcase)
     end
   end
 end
