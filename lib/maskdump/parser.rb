@@ -50,11 +50,27 @@ module Maskdump
       space.repeat
     end
 
+    rule(:tab) do
+      match('\t')
+    end
+
     #
     # some word except newline and space. include special characters like '-'
     #
     rule(:something) do
       match('\R').absent? >> space.absent? >> match('\S').repeat(1)
+    end
+
+    #
+    # some value except newline and tab. include special characters like '-', space
+    #
+    rule(:column_value) do
+      (
+        match('\R').absent? >> match('\t').absent? >> 
+        (
+          match('\S') | match('\s')
+        )
+      ).repeat(1)
     end
 
     #
@@ -73,13 +89,14 @@ module Maskdump
     end
 
     rule(:column_values) do
-      space_separated(something.as(:column_value))
+      tab_separated(column_value.as(:value))
     end
 
     rule(:copy) do
       (
         ignore_case_str('copy') >> spaces >> table_name.as(:table) >> spaces >> column_definitions >> 
-        spaces >> ignore_case_str('from stdin') >> delimiter >> newline >> column_values >> newline >> str('\.')
+        spaces >> ignore_case_str('from ') >> ignore_case_str('stdin') >> delimiter >> newline >> 
+        (str('\.').absent? >> column_values >> newline).as(:values).repeat(1) >> str('\.')
       ).as(:copy)
     end
 
@@ -93,6 +110,10 @@ module Maskdump
 
     def parenthetical(value)
       str("(") >> space? >> value >> space? >> str(")")
+    end
+
+    def tab_separated(value)
+      value >> (tab >> value).repeat
     end
 
     def space_separated(value)
